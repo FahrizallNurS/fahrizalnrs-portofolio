@@ -1,3 +1,97 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ==========================================
+   Global base
+   ========================================== */
+body {
+  transition: background-color 0.8s ease-in-out;
+  background-color: #FFE44D; /* Initial Hero Color */
+}
+
+/* Section bg dibikin transparan karena warna dikontrol dari <body> */
+section {
+  background-color: transparent !important;
+}
+
+/* ==========================================
+   Texture overlay (subtle noise di seluruh layar)
+   ========================================== */
+.texture-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 40;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* ==========================================
+   Reveal on scroll animation
+   ========================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================
+   Ambient glow (blur warna transisi antar section)
+   ========================================== */
+.ambient-glow {
+  position: absolute;
+  width: 150vw;
+  height: 50vh;
+  left: -25vw;
+  filter: blur(100px);
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ==========================================
+   Glassmorphism card (Journey & Tech Stack section)
+   ========================================== */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.02), 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+}
+.glass-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.05), 0 15px 40px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================
+   Magnetic button wrapper
+   ========================================== */
+.magnetic-wrap {
+  display: inline-block;
+}
+
+/* ==========================================
+   Lenis smooth scroll fix
+   ========================================== */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
