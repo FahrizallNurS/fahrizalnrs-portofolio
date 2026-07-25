@@ -9,7 +9,7 @@ export default function Hero() {
       data-color="#FFE44D"
       className="min-h-screen w-full flex flex-col justify-center items-center relative overflow-hidden px-margin-mobile md:px-margin-desktop py-24 section-trigger"
     >
-      <div className="max-w-container-max mx-auto w-full flex flex-col items-center text-center z-10 relative mt-16">
+      <div className="max-w-container-max mx-auto w-full flex flex-col items-center text-center z-10 relative mt-16 reveal">
         <div className="flex items-center gap-2 mb-6">
           <span className="material-symbols-outlined text-black">star</span>
           <span className="font-label-md text-label-md text-black tracking-[0.2em] uppercase">

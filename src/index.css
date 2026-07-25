@@ -5,6 +5,10 @@
 /* ==========================================
    Global base
    ========================================== */
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   transition: background-color 0.8s ease-in-out;
   background-color: #FFE44D; /* Initial Hero Color */

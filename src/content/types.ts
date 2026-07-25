@@ -89,3 +89,13 @@ export interface FooterContent {
   socialLinks: { label: string; href: string }[];
   copyrightText: string;                
 }
+
+// ==========================================
+// Navbar
+// ==========================================
+export interface NavbarContent {
+  brandName: string;                              
+  navLinks: { label: string; href: string }[];     
+  ctaLabel: string;                                
+  ctaHref: string;                                 
+}

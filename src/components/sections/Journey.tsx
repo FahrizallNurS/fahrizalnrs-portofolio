@@ -13,8 +13,8 @@ export default function Journey() {
 
       <div className="max-w-container-max mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-stack-lg items-center relative z-10">
         {/* Kolom kiri: judul + stats */}
-        <div className="lg:col-span-5 flex flex-col">
-          <h2 className="font-display-xl uppercase leading-[0.9] mb-12">
+        <div className="lg:col-span-5 flex flex-col reveal">
+          <h2 className="font-display-xl text-display-xl-mobile md:text-display-xl uppercase leading-[0.9] mb-12">
             {title}
             <br />
             <span className="text-white/50">{highlightWord}</span>
@@ -35,7 +35,8 @@ export default function Journey() {
           </div>
         </div>
 
-        <div className="lg:col-span-7 flex flex-col justify-center lg:pl-16">
+        {/* Kolom kanan: paragraf, delay dikit biar muncul setelah kolom kiri */}
+        <div className="lg:col-span-7 flex flex-col justify-center lg:pl-16 reveal delay-100">
           {paragraphs.map((paragraph, index) =>
             index === 0 ? (
               <p key={index} className="font-body-lg text-body-lg text-white mb-8">

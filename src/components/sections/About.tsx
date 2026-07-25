@@ -13,7 +13,7 @@ export default function About() {
 
       <div className="max-w-container-max mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center relative z-10">
         {/* Kolom teks */}
-        <div className="order-2 lg:order-1 flex flex-col items-start max-w-xl">
+        <div className="order-2 lg:order-1 flex flex-col items-start max-w-xl reveal">
           <div className="flex items-center gap-2 mb-6">
             <span className="material-symbols-outlined text-black">person</span>
             <span className="font-label-md text-label-md text-black tracking-[0.2em] uppercase">
@@ -49,8 +49,8 @@ export default function About() {
           )}
         </div>
 
-        {/* Kolom foto */}
-        <div className="order-1 lg:order-2 flex justify-center lg:justify-end relative">
+        {/* Kolom foto, delay dikit biar muncul setelah teks */}
+        <div className="order-1 lg:order-2 flex justify-center lg:justify-end relative reveal delay-100">
           <div className="relative w-full max-w-[400px] aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl">
             <img
               src={photoUrl}
