@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { navbarContent } from "../../content/navbar";
 import { useLenis } from "../lib/lenis-context";
-import { useMagneticButton } from "../hooks/useMagneticButton";
+import Button from "../ui/Button";
 
 export default function Navbar() {
   const { brandName, navLinks, ctaLabel, ctaHref } = navbarContent;
@@ -11,8 +11,6 @@ export default function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
   const navRef = useRef<HTMLElement>(null);
-
-  useMagneticButton(navRef);
 
   function handleAnchorClick(
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -57,16 +55,11 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Desktop CTA */}
-        <div className="hidden md:flex magnetic-wrap">
-          <a
-            href={ctaHref}
-            onClick={(e) => handleAnchorClick(e, ctaHref)}
-            className="magnetic-btn flex items-center justify-center px-6 py-3 bg-white text-black rounded-full font-label-md text-label-md transition-transform uppercase"
-          >
-            {ctaLabel}
-          </a>
-        </div>
+       <div className="hidden md:flex" onClick={(e: any) => handleAnchorClick(e, ctaHref)}>
+        <Button href={ctaHref} variant="primary">
+          {ctaLabel}
+        </Button>
+      </div>
 
         {/* Mobile Hamburger Button */}
         <button
@@ -93,13 +86,11 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a
-            href={ctaHref}
-            onClick={(e) => handleAnchorClick(e, ctaHref)}
-            className="inline-flex items-center justify-center px-8 py-4 mt-4 bg-white text-black rounded-full font-label-md text-label-md transition-transform uppercase"
-          >
-            {ctaLabel}
-          </a>
+          <div className="mt-4" onClick={(e: any) => handleAnchorClick(e, ctaHref)}>
+            <Button href={ctaHref} variant="primary">
+              {ctaLabel}
+            </Button>
+          </div>
         </div>
       )}
     </nav>

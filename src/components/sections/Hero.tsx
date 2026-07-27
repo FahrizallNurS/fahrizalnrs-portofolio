@@ -1,4 +1,5 @@
 import { heroContent } from "../../content/hero";
+import Button from "../ui/Button";
 
 export default function Hero() {
   const { eyebrow, headline, description, ctaLabel, ctaHref } = heroContent;
@@ -17,23 +18,17 @@ export default function Hero() {
           </span>
         </div>
 
-        <h1 className="font-display-2xl text-black text-[80px] md:text-[180px] lg:text-[220px] leading-[0.8] mb-8 uppercase text-center">
-          {headline}
-        </h1>
+       <h1 className="font-display-2xl fluid-gradient-text text-[80px] md:text-[180px] lg:text-[220px] leading-[0.8] mb-8 uppercase text-center">
+        {headline}
+      </h1>
 
         <p className="font-body-lg text-body-lg text-black/80 max-w-2xl mx-auto mb-12">
           {description}
         </p>
 
-        <div className="magnetic-wrap">
-          <a
-            href={ctaHref}
-            className="magnetic-btn inline-flex items-center justify-center px-8 py-4 bg-black text-white rounded-full font-label-md text-label-md transition-transform uppercase gap-2"
-          >
-            {ctaLabel}
-            <span className="material-symbols-outlined text-lg">arrow_downward</span>
-          </a>
-        </div>
+        <Button href={ctaHref} variant="dark" icon="arrow_downward" iconPosition="right">
+          {ctaLabel}
+        </Button>
       </div>
     </section>
   );

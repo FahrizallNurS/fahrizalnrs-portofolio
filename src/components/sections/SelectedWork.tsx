@@ -35,6 +35,7 @@ export default function SelectedWorks() {
                 <li key={project.slug} className="group border-b border-white/20 relative">
                   <Link
                     to={`/projects/${project.slug}`}
+                    viewTransition
                     className="flex items-center justify-between py-8 w-full relative z-10"
                   >
                     <span className="font-headline-lg text-2xl lg:text-3xl text-white/70 group-hover:text-white transition-colors tracking-wide">

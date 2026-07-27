@@ -75,14 +75,7 @@ section {
   transform: translateY(-10px) scale(1.02);
   box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.05), 0 15px 40px rgba(0, 0, 0, 0.4);
   border-color: rgba(255, 255, 255, 0.2);
-}
-
-/* ==========================================
-   Magnetic button wrapper
-   ========================================== */
-.magnetic-wrap {
-  display: inline-block;
-}
+} 
 
 /* ==========================================
    Lenis smooth scroll fix
@@ -98,4 +91,26 @@ html.lenis {
 }
 .lenis.lenis-stopped {
   overflow: hidden;
+}
+
+@keyframes fluidGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.fluid-gradient-text {
+  background: linear-gradient(-45deg, #7B5CFA, #FF6B3D, #66D67A, #7B5CFA);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fluidGradient 8s ease infinite;
+  -webkit-text-stroke: 4px #171717;
+}
+
+@media (max-width: 768px) {
+  .fluid-gradient-text {
+    -webkit-text-stroke: 2px #171717;
+  }
 }

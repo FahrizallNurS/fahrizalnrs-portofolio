@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "./components/layout/RootLayout";
 import Home from "./pages/Home";
+import ProjectDetail from "./pages/ProjectDetail";
 
 export const router = createBrowserRouter([
   {
@@ -10,8 +11,10 @@ export const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-      // nanti Fase 4 tinggal nambah di sini:
-      // { path: "/projects/:slug", element: <ProjectDetail /> },
+      {
+        path: "/projects/:slug",
+        element: <ProjectDetail />,
+      },
     ],
   },
 ]);

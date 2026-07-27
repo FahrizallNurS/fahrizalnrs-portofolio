@@ -1,4 +1,5 @@
 import { aboutContent } from "../../content/about";
+import Button from "../ui/Button";
 
 export default function About() {
   const { eyebrow, title, paragraphs, photoUrl, resumeUrl } = aboutContent;
@@ -36,15 +37,9 @@ export default function About() {
 
           {resumeUrl && (
             <div className="flex flex-wrap gap-4">
-              <div className="magnetic-wrap">
-                <a
-                  href={resumeUrl}
-                  className="magnetic-btn inline-flex items-center justify-center px-6 py-3 bg-black text-white rounded-full font-label-md text-label-md transition-transform uppercase gap-2"
-                >
-                  <span className="material-symbols-outlined text-sm">download</span>
-                  Resume
-                </a>
-              </div>
+              <Button href={resumeUrl} variant="dark" icon="download" iconPosition="left">
+                Resume
+              </Button>
             </div>
           )}
         </div>

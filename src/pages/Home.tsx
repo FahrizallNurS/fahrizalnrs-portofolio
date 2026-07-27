@@ -7,17 +7,13 @@ import TechStack from "../components/sections/TechStack";
 import ContactCTA from "../components/sections/ContactCTA";
 import { useColorTransition } from "../components/hooks/useColorTransition";
 import { useRevealOnScroll } from "../components/hooks/useRevealOnScroll";
-import { useMagneticButton } from "../components/hooks/useMagneticButton";
 
 export default function Home() {
-  const mainRef = useRef<HTMLElement>(null);
-
   useColorTransition();
   useRevealOnScroll();
-  useMagneticButton(mainRef);
 
   return (
-    <main ref={mainRef}>
+    <main>
       <Hero />
       <About />
       <Journey />
