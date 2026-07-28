@@ -1,8 +1,11 @@
 import { useEffect } from "react";
 
+const YELLOW_COLOR = "#FFE44D";
+
 export function useColorTransition() {
   useEffect(() => {
     const sections = document.querySelectorAll<HTMLElement>(".section-trigger");
+    const nav = document.getElementById("main-nav");
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -11,6 +14,13 @@ export function useColorTransition() {
             const color = entry.target.getAttribute("data-color");
             if (color) {
               document.body.style.backgroundColor = color;
+
+              if (nav) {
+                nav.setAttribute(
+                  "data-nav-theme",
+                  color === YELLOW_COLOR ? "yellow" : "default"
+                );
+              }
             }
           }
         });

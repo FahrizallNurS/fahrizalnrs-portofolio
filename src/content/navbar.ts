@@ -1,7 +1,7 @@
 import type { NavbarContent } from "./types";
 
 export const navbarContent: NavbarContent = {
-  brandName: "DEV WRAPPED",
+  brandName: "FNS",
   navLinks: [
     { label: "About", href: "#about" },
     { label: "Projects", href: "#projects" },

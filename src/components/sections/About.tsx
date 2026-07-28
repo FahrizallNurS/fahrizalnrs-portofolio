@@ -2,7 +2,7 @@ import { aboutContent } from "../../content/about";
 import Button from "../ui/Button";
 
 export default function About() {
-  const { eyebrow, title, paragraphs, photoUrl, resumeUrl } = aboutContent;
+  const { eyebrow, title, paragraphs, photoUrl, resumeUrl, githubUrl } = aboutContent;
 
   return (
     <section
@@ -13,7 +13,6 @@ export default function About() {
       <div className="ambient-glow -top-24 bg-[#FFE44D]"></div>
 
       <div className="max-w-container-max mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center relative z-10">
-        {/* Kolom teks */}
         <div className="order-2 lg:order-1 flex flex-col items-start max-w-xl reveal">
           <div className="flex items-center gap-2 mb-6">
             <span className="material-symbols-outlined text-black">person</span>
@@ -35,16 +34,20 @@ export default function About() {
             </p>
           ))}
 
-          {resumeUrl && (
-            <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4">
+            {resumeUrl && (
               <Button href={resumeUrl} variant="dark" icon="download" iconPosition="left">
                 Resume
               </Button>
-            </div>
-          )}
+            )}
+            {githubUrl && (
+              <Button href={githubUrl} target="_blank" variant="primary" icon="code" iconPosition="left">
+                GitHub
+              </Button>
+            )}
+          </div>
         </div>
 
-        {/* Kolom foto, delay dikit biar muncul setelah teks */}
         <div className="order-1 lg:order-2 flex justify-center lg:justify-end relative reveal delay-100">
           <div className="relative w-full max-w-[400px] aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl">
             <img

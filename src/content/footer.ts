@@ -7,5 +7,5 @@ export const footerContent: FooterContent = {
     { label: "GitHub", href: "#" },
     { label: "LinkedIn", href: "#" },
   ],
-  copyrightText: "© 2026 DEV WRAPPED",
+  copyrightText: "© 2026 FNS.DEV",
 };

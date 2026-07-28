@@ -33,11 +33,12 @@ export default function Navbar() {
     <nav
       ref={navRef}
       id="main-nav"
+      data-nav-theme="default"
       className="fixed top-0 w-full z-50 px-margin-mobile md:px-margin-desktop bg-transparent py-stack-md transition-all duration-300 mix-blend-difference"
     >
       <div className="flex justify-between items-center">
         {/* Brand Name */}
-        <div className="font-display-xl text-white tracking-tighter text-[32px] md:text-[40px] leading-none uppercase">
+        <div className="nav-text font-display-xl text-white tracking-tighter text-[32px] md:text-[40px] leading-none uppercase">
           {brandName}
         </div>
 
@@ -48,22 +49,22 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               onClick={(e) => handleAnchorClick(e, link.href)}
-              className="text-white font-label-md text-label-md hover:opacity-70 transition-opacity uppercase"
+              className="nav-text text-white font-label-md text-label-md hover:opacity-70 transition-opacity uppercase"
             >
               {link.label}
             </a>
           ))}
         </div>
 
-       <div className="hidden md:flex" onClick={(e: any) => handleAnchorClick(e, ctaHref)}>
-        <Button href={ctaHref} variant="primary">
-          {ctaLabel}
-        </Button>
-      </div>
+        <div className="hidden md:flex" onClick={(e: any) => handleAnchorClick(e, ctaHref)}>
+          <Button href={ctaHref} variant="primary">
+            {ctaLabel}
+          </Button>
+        </div>
 
         {/* Mobile Hamburger Button */}
         <button
-          className="md:hidden text-white flex items-center justify-center p-2"
+          className="nav-text md:hidden text-white flex items-center justify-center p-2"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle Menu"
         >

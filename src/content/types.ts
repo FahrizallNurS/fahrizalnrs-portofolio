@@ -99,3 +99,12 @@ export interface NavbarContent {
   ctaLabel: string;                                
   ctaHref: string;                                 
 }
+
+export interface AboutContent {
+  eyebrow: string;
+  title: string;
+  paragraphs: string[];
+  photoUrl: string;
+  resumeUrl?: string;
+  githubUrl?: string;    // link ke profil GitHub (opsional)
+}
