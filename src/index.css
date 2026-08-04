@@ -77,6 +77,16 @@ section {
   border-color: rgba(255, 255, 255, 0.2);
 } 
 
+.glass-preview {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px); /* Support Safari */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  /* Inner shadow buat efek pantulan ujung kaca, drop shadow buat efek melayang */
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25), 
+              0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
 /* ==========================================
    Lenis smooth scroll fix
    ========================================== */
@@ -124,3 +134,60 @@ html.lenis {
 .nav-text {
   transition: color 0.3s ease-in-out;
 }
+
+/* ==========================================
+   Tech Stack Marquee
+   ========================================== */
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.marquee-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee-track.direction-left {
+  animation: marquee-left 25s linear infinite;
+}
+.marquee-track.direction-right {
+  animation: marquee-right 25s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-solid {
+  color: #ffffff;
+  transition: color 0.3s ease;
+  cursor: default;
+}
+.marquee-solid:hover {
+  color: var(--item-color);
+}
+
+.marquee-stroke {
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease, -webkit-text-stroke-color 0.3s ease;
+  cursor: default;
+}
+.marquee-stroke:hover {
+  color: var(--item-color);
+  -webkit-text-stroke-color: transparent;
+}   
